@@ -1,4 +1,4 @@
-# example-app
+# K8s Test
 
 Example application for Codefresh CI/CD demonstrations.
 
