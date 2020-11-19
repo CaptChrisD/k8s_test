@@ -41,6 +41,7 @@ steps:
     # registry: ${{CF_REPO_NAME}}
     tags:
     - "${{CF_SHORT_REVISION}}"
+    - "${{CF_REPO_OWNER}}"
 
   deploy_master:
     title: Deploying to Master
