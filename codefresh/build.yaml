@@ -21,7 +21,7 @@ steps:
     stage: Build
     type: build
     description: Build image
-    image_name: "lower(${{CF_REPO_OWNER}})/${{CF_REPO_NAME}}"
+    image_name: 'lower(${{CF_REPO_OWNER}})/${{CF_REPO_NAME}}'
     tag: ${{CF_SHORT_REVISION}}
     dockerfile: Dockerfile
 
