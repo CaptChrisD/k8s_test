@@ -16,12 +16,7 @@ steps:
     git: "github"
     revision: ${{CF_BRANCH}}
 
-  init_variables:
-    stage: Build
-    title: Initializing variables...
-    image: alpine
-    commands:
-      - cf_export CF_REPO_OWNER=`echo $CF_REPO_OWNER | awk '{print tolower($0)}'`
+
 
   build_image:
     title: Build image
@@ -31,6 +26,13 @@ steps:
     image_name: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
     tag: ${{CF_SHORT_REVISION}}
     dockerfile: Dockerfile
+
+  init_variables:
+    stage: Push
+    title: Initializing variables...
+    image: alpine
+    commands:
+      - cf_export CF_REPO_OWNER=`echo $CF_REPO_OWNER | awk '{print tolower($0)}'`
 
   push_image_commit:
     title: Push image with commit tag
