@@ -36,7 +36,7 @@ steps:
     title: Push image with commit tag
     stage: Push
     type: push
-    candidate: "${{lower(${{build_image}})}}"
+    candidate: ${{build_image}}
     registry: ${{CF_REPO_NAME}}
     tags:
     - "${{CF_SHORT_REVISION}}"
