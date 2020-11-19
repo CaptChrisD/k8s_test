@@ -37,7 +37,7 @@ steps:
     stage: Push
     type: push
     candidate: ${{build_image}}
-    registry: ${{CF_REPO_NAME}}
+    # registry: ${{CF_REPO_NAME}}
     tags:
     - "${{CF_SHORT_REVISION}}"
 
