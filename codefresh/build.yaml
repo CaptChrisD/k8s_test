@@ -12,7 +12,7 @@ steps:
     type: git-clone
     stage: Prepare
     description: "Initialize"
-    repo: ${{CF_REPO_OWNER | strings.ToUpper}}/${{CF_REPO_NAME}}
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
     git: "github"
     revision: ${{CF_BRANCH}}
 
@@ -21,7 +21,7 @@ steps:
     stage: Build
     type: build
     description: Build image
-    image_name: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    image_name: ${{CF_REPO_OWNER | strings.ToLower}}/${{CF_REPO_NAME}}
     tag: ${{CF_SHORT_REVISION}}
     dockerfile: Dockerfile
 
