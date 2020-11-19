@@ -16,6 +16,13 @@ steps:
     git: "github"
     revision: ${{CF_BRANCH}}
 
+  init_variables:
+    stage: Build
+    title: Initializing variables...
+    image: alpine
+    commands:
+      - cf_export CF_REPO_OWNER=`echo $CF_REPO_OWNER | awk '{print tolower($0)}'`
+
   build_image:
     title: Build image
     stage: Build
